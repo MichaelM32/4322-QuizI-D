@@ -12,19 +12,35 @@ import csv
 
 #open the file
 
-
+employee_dat = open("employee_data.csv", 'r')
+empfile = csv.reader(employee_dat, delimiter=',')
 
 
 #create an empty dictionary
 
+empdict = {}
 
 #use a loop to iterate through the csv file
 
+for employee in empfile:
+    CustID = employee[0]
+    FName = employee[1]
+    LName = employee[2]
+    Dep = employee[3]
+    Title = employee[4]
+    Sal = employee[5]
+    Hire = employee[6]
+    Birth = employee[7]
+    Gend = employee[8]
+    Clear = employee[9]
+
+    if employee[4] == "Marketing":
+        raise_pay = float(employee[5]) * 1.1
+        
 
     #check if the employee fits the search criteria
 
 
-    
 
 print()
 print('=========================================')
